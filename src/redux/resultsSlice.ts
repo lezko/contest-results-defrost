@@ -26,7 +26,10 @@ export interface ResultsState {
 }
 
 const initialState: ResultsState = {
-    initialData: null,
+    initialData: {
+        contest: null,
+        freezeStartTime: 0
+    },
     contest: null,
     currentResultIdx: 0,
     currentProblemSubmissions: [],

@@ -7,6 +7,7 @@ const StyledList = styled('div')`
     & > *:nth-child(odd) {
         background-color: #162135;
     }
+    padding-bottom: 40px;
 `;
 
 export const ResultList = () => {

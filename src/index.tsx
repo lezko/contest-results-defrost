@@ -5,11 +5,15 @@ import { Provider } from 'react-redux';
 import { persistor, store } from '@/redux';
 import { GlobalStyle } from '@/styles/GlobalStyle.ts';
 import { PersistGate } from 'redux-persist/integration/react';
-import { createHashRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, Navigate, RouterProvider } from 'react-router-dom';
 import { SelectFile } from '@/pages/select-file.tsx';
 import { ConfigProvider } from 'antd';
 
 const router = createHashRouter([
+    {
+        index: true,
+        element: <Navigate to="/select-file" />
+    },
     {
         path: '/select-file',
         element: <SelectFile />

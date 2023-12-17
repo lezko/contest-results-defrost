@@ -3,20 +3,36 @@ import { Team } from '@/types/Team.ts';
 import { Submission } from '@/types/Submission.ts';
 import { Contest } from '@/types/Contest.ts';
 
+function correctString(str: string) {
+    if (str.startsWith('"') && str.endsWith('"')) {
+        return str.slice(1, -1);
+    }
+    return str;
+}
+
 export function parseProblem(str: string): Problem {
     const parts = str.slice(3).split(',');
+    const shortName = parts[0];
+    let fullName = '';
+    for (let i = 1; i < parts.length - 2; i++) {
+        fullName += parts[i];
+    }
     return {
-        shortName: parts[0],
-        fullName: parts[1],
-        penalty: +parts[2],
+        shortName,
+        fullName: correctString(fullName),
+        penalty: +parts[parts.length - 2],
     };
 }
 
 export function parseTeam(str: string): Team {
     const parts = str.slice(3).split(',');
+    let name = '';
+    for (let i = 3; i < parts.length; i++) {
+        name += parts[i];
+    }
     return {
         idx: +parts[0],
-        name: parts[3],
+        name: correctString(name),
     };
 }
 

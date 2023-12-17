@@ -29,7 +29,7 @@ export const ResultsTable = () => {
     return (
         <StyledTable>
             <Container style={{flexGrow: 1}}>
-                <ContestTitle>{contest.name}</ContestTitle>
+                <ContestTitle>{contest!.name}</ContestTitle>
                 <ResultsHeader />
                 <ResultList />
             </Container>

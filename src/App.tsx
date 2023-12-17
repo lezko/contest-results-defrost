@@ -13,7 +13,7 @@ const StyledApp = styled('div')`
 `;
 
 export const App = () => {
-    const { setInitialData, setDefrostingState, setContest, sortResults, defrostFullProblem, setCurrentResultIdx } = useActions();
+    const { setDefrostingState, setContest, sortResults, defrostFullProblem, setCurrentResultIdx } = useActions();
     const {
         initialData,
         contest,
