@@ -16,6 +16,9 @@ export function parseProblem(str: string): Problem {
     let fullName = '';
     for (let i = 1; i < parts.length - 2; i++) {
         fullName += parts[i];
+        if (i < parts.length - 3) {
+            fullName += ',';
+        }
     }
     return {
         shortName,
@@ -29,6 +32,9 @@ export function parseTeam(str: string): Team {
     let name = '';
     for (let i = 3; i < parts.length; i++) {
         name += parts[i];
+        if (i < parts.length - 1) {
+            name += ',';
+        }
     }
     return {
         idx: +parts[0],
