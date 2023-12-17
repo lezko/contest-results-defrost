@@ -8,11 +8,14 @@ const StyledList = styled('div')`
         background-color: #162135;
     }
     padding-bottom: 40px;
+    overflow-anchor: none;
 `;
 
 export const ResultList = () => {
     const { results } = useAppSelector(state => state.results);
-    const [animationParent] = useAutoAnimate();
+    const [animationParent] = useAutoAnimate({
+        disrespectUserMotionPreference: false
+    });
 
     return (
         <StyledList ref={animationParent}>
